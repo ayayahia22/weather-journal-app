@@ -1,19 +1,18 @@
 body{
     
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background-image: url(../img/README.jpeg);
-    background-size: cover;
+   
+   
+   
 }
 
 #app{
-   
+    background-color: white;
     display: grid;
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
-    height:90vh;
-  /* background-image: url(../img/README.jpeg);
-  background-size: cover; */
     color: black;
+    height: 95vh;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;

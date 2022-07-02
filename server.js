@@ -29,7 +29,7 @@ function addInfo(req, res) {
   projectData["content"] = req.body.content;
   res.send(projectData);
 }
-
+// Get Route API
 app.get('/all', getInfo);
 
 function getInfo(req, res) {

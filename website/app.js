@@ -1,6 +1,6 @@
 /* Global Variables */
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather?zip=";
-const APIKEY = "&appid=88ab11ba8c72bfe093bcc1e00b661164";
+const APIKEY = "&appid=88ab11ba8c72bfe093bcc1e00b661164&units=metric";
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + 1 + "." + d.getDate() + "." + d.getFullYear();
@@ -37,7 +37,7 @@ const postData = async (url = "", data = {}) => {
     console.log("newData error", error);
   }
 };
-/////
+//Function to GET Project Data
 const retrieveData = async () => {
   const request = await fetch("/all");
   try {
@@ -45,9 +45,8 @@ const retrieveData = async () => {
     const allData = await request.json();
     console.log(allData);
     // Write updated data to DOM elements
-    document.getElementById("temp").innerHTML =
-      Math.round(allData.temp) + "degrees";
-    document.getElementById("content").innerHTML = allData.feel;
+    document.getElementById("temp").innerHTML = Math.round(allData.temp) + "degrees";
+    document.getElementById("feelings").innerHTML = allData.content;
     document.getElementById("date").innerHTML = allData.date;
   } catch (error) {
     console.log("error", error);
@@ -65,7 +64,7 @@ function generatefun() {
       const info = data;
       console.log("info");
       console.log(info);
-      postData('/add', { date: info, temp: info.main.temp, feelings }).then(function (res) {
+      postData('/add', { date: newDate, temp: info.main.temp, content: feelings }).then(function (res) {
         retrieveData();
       })
     }
