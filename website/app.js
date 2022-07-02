@@ -46,7 +46,7 @@ const retrieveData = async () => {
     console.log(allData);
     // Write updated data to DOM elements
     document.getElementById("temp").innerHTML = Math.round(allData.temp) + "degrees";
-    document.getElementById("feelings").innerHTML = allData.content;
+    document.getElementById("content").innerHTML = allData.content;
     document.getElementById("date").innerHTML = allData.date;
   } catch (error) {
     console.log("error", error);
